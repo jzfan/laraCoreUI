@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes(['register' => false]);
+
+Route::get('/admin', 'Admin\IndexController@index');
+Route::get('/admin/users', 'Admin\UserController@index');
+Route::put('/admin/users', 'Admin\UserController@update');
+// Route::get('/home', 'HomeController@index')->name('home');
